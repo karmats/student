@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!-- Filnamn: Boksamling2.xml -->
+<!-- Forfattare: Robert Jonsson -->
+<!-- Datum: 2007-04-27 -->
+<?xml-stylesheet type="text/css" href="Boksamling2.css"?>
+
+
+<boksamling>
+	<bok>
+		<titel>XML Content and Data</titel>
+		<forfattare>Kelly Carey</forfattare>
+		<forfattare>Stanko Blatnik</forfattare>
+		<sidor>408</sidor>
+		<pris>410 kronor</pris>
+	</bok>
+	<bok>
+		<titel>Java direkt med Swing</titel>
+		<forfattare>Jan Skansholm</forfattare>
+		<sidor>721</sidor>
+		<pris>352 kronor</pris>
+	</bok>
+</boksamling>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Filnamn: uppgift1.xml -->
+<!-- Forfattare: Mats Roshauw -->
+<!-- Datum: 2021-03-21 -->
+
+<person>
+    <namn>Mats Roshauw</namn>
+    <alder>40</alder>
+    <adress>Mellangårdsvägen 10</adress>
+    <postort>Göteborg</postort>
+    <postnummer>41467</postnummer>
+</person>
