@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beställning>
+    <gäst>
+        <namn>
+            <förnamn>Karin</förnamn>
+            <efternamn>Nordin</efternamn>
+        </namn>
+        <adress>
+            <gata>Storgatan 5</gata>
+            <postnummer>83838</postnummer>
+            <ort>Östersund</ort>
+        </adress>
+        <telefon typ="privat">50505050</telefon>
+        <telefon typ="mobil">90909090</telefon>
+    </gäst>
+    <rum>
+        <nummer>521</nummer>
+        <från>2007-03-09</från>
+        <till>2007-03-11</till>
+        <röfkritt>true</röfkritt>
+        <pris valuta="sek">650</pris>
+    </rum>
+    <mat>
+        <frukost>2</frukost>
+        <lunch>3</lunch>
+        <middag>2</middag>
+        <pris valuta="sek">350</pris>
+    </mat>
+    <refrensnummer>k23hj</refrensnummer>
+</beställning>
