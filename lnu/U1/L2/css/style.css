@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+#inputForm {
+	padding-bottom: 10px;
+}
+#inputForm button {
+	margin-left: 40px;
+}
+
+#fruitImg {
+	float: right;
+	width: 250px;
+	margin-bottom: 10px;
+}
+
+#selectedFruits img {
+	width: 70px;
+	margin-right: 5px;
+}
+
+@media screen and (max-width:740px) {
+	#fruitImg {
+		float: none;
+	}
+}
