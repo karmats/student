@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="personuppgifter.css" ?>
+<?xml-stylesheet type="text/css" href="cv.css" ?>
+<cv>
+    <namn>
+        <förnamn>Mats</förnamn>
+        <efternamn>Roshauw</efternamn>
+    </namn>
+    <personuppgifter>
+        <adress>
+            <gata>Testgatan</gata>
+            <postnummer>12345</postnummer>
+            <ort>Teststaden</ort>
+            <land>Sverige</land>
+        </adress>
+        <telefon typ="hem">073-1234567</telefon>
+        <telefon typ="mobil">073-1234567</telefon>
+        <email>test@mail.com</email>
+    </personuppgifter>
+    <utbildningar>
+        <utbildning>
+            <skola>Testskolan Universitet</skola>
+            <typ>Universitet</typ>
+            <namn>Datalogi</namn>
+            <ort>Teststaden</ort>
+            <start>2020-01-01</start>
+        </utbildning>
+        <utbildning>
+            <skola>Testskolan Universitet</skola>
+            <typ>Kurs</typ>
+            <namn>3D-modellering</namn>
+            <ort>Teststaden</ort>
+            <start>2019-01-01</start>
+            <slut> 2019-06-01</slut>
+        </utbildning>
+        <utbildning>
+            <skola>Testskolan Gymnasie</skola>
+            <typ>Gymnasie</typ>
+            <namn>SMIT</namn>
+            <ort>Teststaden</ort>
+            <start>2017-01-01</start>
+            <slut>2020-01-01</slut>
+        </utbildning>
+    </utbildningar>
+    <jobberfarenheter>
+        <jobb>
+            <företag>Testtekniker</företag>
+            <titel>Tekniker</titel>
+            <beskrivning>Jobbar som tekniker</beskrivning>
+            <ort>Teststaden</ort>
+            <start>2021-01-01</start>
+        </jobb>
+        <jobb>
+            <företag>Testkonsult</företag>
+            <titel>Konsult</titel>
+            <beskrivning>Jobbade med konsulting</beskrivning>
+            <ort>Teststaden</ort>
+            <start>2020-01-01</start>
+            <slut>2021-01-01</slut>
+        </jobb>
+        <jobb>
+            <företag>Testföretag</företag>
+            <titel>QA</titel>
+            <beskrivning>Jobbade med test</beskrivning>
+            <ort>Teststaden</ort>
+            <start>2017-01-01</start>
+            <slut>2020-01-01</slut>
+        </jobb>
+    </jobberfarenheter>
+</cv>

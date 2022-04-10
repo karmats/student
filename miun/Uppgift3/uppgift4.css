@@ -1,0 +1,42 @@
+uppgift {
+  background-color: rgb(239, 239, 239);
+  font-size: 12pt;
+}
+
+uppgift * {
+  padding: 4px;
+}
+
+rubrik {
+  display: block;
+  color: rgb(66, 142, 206);
+  font-size: 20pt;
+  font-weight: bold;
+  text-align: center;
+}
+
+namn {
+  display: block;
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+logo {
+  background-image: url("miunlogo.gif");
+  width: 160px;
+  height: 76px;
+  float: left;
+  padding: 0;
+  margin: 16px;
+}
+
+datum {
+  display: block;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 12px;
+}
+
+beskrivning {
+  color: rgb(182 54 57);
+}

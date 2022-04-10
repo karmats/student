@@ -1,0 +1,35 @@
+cv {
+  font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;
+  font-size: 100%;
+  margin: 0;
+  padding: 1rem 5rem;
+  background-color: black;
+  color: white;
+}
+
+cv > * {
+  display: block;
+  margin-top: 1.5rem;
+}
+
+cv > namn {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+utbildningar utbildning,
+jobberfarenheter jobb {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+utbildningar utbildning > skola,
+jobberfarenheter jobb > företag {
+  font-weight: bold;
+}
+
+utbildningar utbildning > *:not(skola),
+jobberfarenheter jobb > *:not(företag) {
+  color: gray;
+}

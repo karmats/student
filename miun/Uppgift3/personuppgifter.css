@@ -1,0 +1,10 @@
+personuppgifter * {
+  color: gray;
+  font-size: 0.8rem;
+  display: block;
+}
+
+personuppgifter adress *{
+  font-style: italic;
+  display: inline;
+}
