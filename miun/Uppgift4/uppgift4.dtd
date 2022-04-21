@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE boksamling [
+<!ELEMENT boksamling (bok+)>
+<!ELEMENT bok (titel, författare+, sidor?, pris, förlag, utgivningsår, omslag?)>
+<!ATTLIST bok isbn CDATA #REQUIRED>
+<!ELEMENT författare (namn)>
+<!ELEMENT namn (förnamn, efternamn)>
+<!ELEMENT förnamn (#PCDATA)>
+<!ELEMENT efternamn (#PCDATA)>
+<!ELEMENT titel (#PCDATA)>
+<!ELEMENT sidor (#PCDATA)>
+<!ELEMENT pris (#PCDATA)>
+<!ATTLIST pris valuta CDATA "SEK">
+<!ELEMENT förlag (#PCDATA)>
+<!ELEMENT utgivningsår (#PCDATA)>
+<!ELEMENT omslag (#PCDATA)>
+]>

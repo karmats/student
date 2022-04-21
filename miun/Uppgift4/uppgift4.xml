@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE boksamling SYSTEM "uppgift4.dtd">
+<boksamling>
+    <bok isbn="012301231">
+        <titel>XML Content and Data</titel>
+        <författare>
+            <namn>
+                <förnamn>Kelly</förnamn>
+                <efternamn>Carey</efternamn>
+            </namn>
+        </författare>
+        <författare>
+            <namn>
+                <förnamn>Stanko</förnamn>
+                <efternamn>Blatnik</efternamn>
+            </namn>
+        </författare>
+        <sidor>408</sidor>
+        <pris valuta="SEK">410</pris>
+        <förlag>Prentic-Hall</förlag>
+        <utgivningsår>2002</utgivningsår>
+        <omslag>paperback</omslag>
+    </bok>
+</boksamling>
