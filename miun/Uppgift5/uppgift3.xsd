@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation>Information om böcker</xsd:documentation>
+    </xsd:annotation>
+    <xsd:element name="boksamling">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="bok" type="bokType" maxOccurs="100" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="bokType">
+        <xsd:sequence>
+            <xsd:element name="titel" type="xsd:string" />
+            <xsd:element name="författare" type="författareType" maxOccurs="4" />
+            <xsd:element name="antalSidor" type="xsd:integer" />
+            <xsd:element name="pris" type="prisType" />
+            <xsd:element name="förlag" type="xsd:string" />
+            <xsd:element name="utgivningsår" type="xsd:gYear" />
+            <xsd:element name="omslag" type="omslagsType" />
+        </xsd:sequence>
+        <xsd:attribute name="isbn" use="required">
+            <xsd:simpleType>
+                <xsd:restriction base="xsd:string">
+                    <xsd:pattern value="[0-9]{10}" />
+                </xsd:restriction>
+            </xsd:simpleType>
+        </xsd:attribute>
+    </xsd:complexType>
+    <xsd:complexType name="författareType">
+        <xsd:sequence>
+            <xsd:element name="namn" type="namnType" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="namnType">
+        <xsd:sequence>
+            <xsd:element name="förnamn" type="xsd:string" />
+            <xsd:element name="efternamn" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="prisType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:decimal">
+                <xsd:attribute name="valuta" type="valutaType" use="required" />
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:simpleType name="valutaType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="sek" />
+            <xsd:enumeration value="dkk" />
+            <xsd:enumeration value="eur" />
+            <xsd:enumeration value="usd" />
+            <xsd:enumeration value="gbp" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="omslagsType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="paperback" />
+            <xsd:enumeration value="hardback" />
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>
