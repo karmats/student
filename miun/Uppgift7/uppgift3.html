@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Uppgift 3</title>
+    <script>
+      function loadXML(url) {
+        const xhttp = new XMLHttpRequest();
+        xhttp.open("GET", url, false);
+        xhttp.send();
+        return xhttp.responseXML;
+      }
+    </script>
+  </head>
+  <body>
+    <h1 id="title">
+      <span id="name"></span> <span id="model"></span>,
+      <span id="regyear"></span>
+    </h1>
+    <p>Typ/volym: <span id="type"></span>/<span id="volume"></span></p>
+    <b id="category"></b> <i id="price"></i>:-
+    <p id="adtext"></p>
+    <i id="addate"></i>
+
+    <script>
+      const xmlDoc = loadXML("fordonsannonser.xml");
+      const firstAd = xmlDoc.getElementsByTagName("ad")[0];
+      for (let i = 0; i < firstAd.childNodes.length; i++) {
+        const node = firstAd.childNodes[i];
+        if (node.nodeType === Node.ELEMENT_NODE) {
+          document.getElementById(node.nodeName).innerHTML = node.childNodes[0]
+            ? node.childNodes[0].nodeValue
+            : "";
+        }
+      }
+    </script>
+  </body>
+</html>

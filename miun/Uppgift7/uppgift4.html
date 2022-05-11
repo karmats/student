@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Uppgift 4</title>
+    <script>
+      function loadXMLString(string) {
+        return new DOMParser().parseFromString(string, "text/xml");
+      }
+    </script>
+  </head>
+  <body>
+    <script>
+      const xmlString = `
+        <person>
+            <name>
+                <first>Mats</first>
+                <last>Roshauw</last>
+            </name>
+            <age>40</age>
+            <phone type="work">070111222</phone>
+            <phone type="home">070333444</phone>
+        </person>
+        `;
+      const xmlDoc = loadXMLString(xmlString);
+
+      const root = xmlDoc.documentElement;
+      let html = "";
+      for (let i = 0; i < root.childNodes.length; i++) {
+        const node = root.childNodes[i];
+        if (node.nodeType === Node.ELEMENT_NODE) {
+          document.body.innerHTML +=
+            node.nodeName +
+            (node.attributes.length > 0
+              ? " (" + node.attributes[0].nodeValue + ")"
+              : "") +
+            ": " +
+            node.textContent +
+            "<br>";
+        }
+      }
+    </script>
+  </body>
+</html>
