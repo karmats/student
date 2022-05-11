@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+#boxes {
+    position: relative;
+    background-color: #FFF;
+    border: 1px solid #666;
+    width: 600px;
+    height: 400px;
+    padding: 0;
+    margin: 0;
+}
+#boxes div {
+    position: absolute;
+    background-color: #FC6;
+    width: 2em;
+    height: 2em;
+    margin: 0;
+    padding: 0.3em;
+    text-align: center;
+    cursor: move; 
+}
+
+#info {
+    height: 1em;
+}
+
+#saveBtn {
+    margin-top: 20px;
+}
