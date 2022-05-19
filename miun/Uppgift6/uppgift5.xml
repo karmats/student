@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="uppgift5.xsl"?>
+<autoads>
+    <ad>
+        <type>1</type>
+        <name>Honda</name>
+        <model>XL 1000 V</model>
+        <regyear>2001</regyear>
+        <price>129900</price>
+        <adtext>2001 Honda XL 1000 V, 8.900 km. hög vindruta. Pris 129.900kr,-.  </adtext>
+        <addate>20020115</addate>
+        <volume>1000</volume>
+        <category></category>
+    </ad>
+    <ad>
+        <type>2</type>
+        <name>Nissan</name>
+        <model>Almera 1.4S</model>
+        <regyear>1997</regyear>
+        <price>119000</price>
+        <adtext>1997 Nissan Almera 1.4S, 5 dörrar, met, 70.000 km. el.spegel/fönster, galv. kaross, c.lås, startspärr, airbag, nedfällb. baks. ABS, ute temp. R/CD, alarm, d.fäste, v.säten, s/v-hj.  EU-godk. full service, servo. Pris 119.000 kr,-.  </adtext>
+        <addate>20020118</addate>
+        <volume>0</volume>
+        <category>5 dörrar</category>
+    </ad>
+    <ad>
+        <type>2</type>
+        <name>Mercedes-Benz</name>
+        <model>C220 Elegance</model>
+        <regyear>1995</regyear>
+        <price>209000</price>
+        <adtext>1995 Mercedes-Benz C220 Elegance, 4 dörrar, 88.000 km. skinn, klima/automatic, cruise, el.spegel/fönster, alu.fälgar, c.lås, airbag, antispinn,  ABS, ute temp, radio, s/v-hjul, servo, creme skinn. automat. Pris 209.000 kr,-.  </adtext>
+        <addate>20020118</addate>
+        <volume>0</volume>
+        <category>4 dörrar</category>
+    </ad>
+    <ad>
+        <type>2</type>
+        <name>Audi</name>
+        <model>S8</model>
+        <regyear>2000</regyear>
+        <price>850000</price>
+        <adtext>2000 Audi S8, 4 dörrar, 40.000 km. 4x4, Tiptronic-aut., klimataut., ABS, el.fönster/speglar/säten, soltak, c.lås, servo, airbag, startspärr, antispinn, cruise., alu., träinred., sort skinn, mitttarmstöd., sportssäten, stereo, alarm, s/v-hjul, dragkrok, 17"+18"alu. Pris 850.000 kr,-.  </adtext>
+        <addate>20020118</addate>
+        <volume>0</volume>
+        <category>4 dörrar</category>
+    </ad>
+    <ad>
+        <type>1</type>
+        <name>Yamaha</name>
+        <model>Thunderace 1000</model>
+        <regyear>2000</regyear>
+        <price>130000</price>
+        <adtext>2000 Yamaha Thunderace 1000, 11.500 km. Röd/Silver,tankväska medföljer. 146hk Pris kan diskuteras vid snabb affär. Pris 130.000 kr,-.  </adtext>
+        <addate>20020116</addate>
+        <volume>1000</volume>
+        <category></category>
+    </ad>
+    <ad>
+        <type>2</type>
+        <name>Audi</name>
+        <model>A4 1.6</model>
+        <regyear>2000</regyear>
+        <price>260000</price>
+        <adtext>2000 Audi A4 1.6, 4 dörrar, 78.000 km. el.fönster, ABS, alu. airbag, , klima, ESP, navig. plus, TV, evt. inbyte, power box (+30 HK) medföljer. Pris 260.000 kr,-.  </adtext>
+        <addate>20020117</addate>
+        <volume>0</volume>
+        <category>4 dörrar</category>
+    </ad>
+    <ad>
+        <type>2</type>
+        <name>Jeep</name>
+        <model>Grand Cherokee 2.5TD</model>
+        <regyear>0</regyear>
+        <price>359000</price>
+        <adtext>0 Jeep Grand Cherokee 2.5TD, Stv., 38.000 km. A/C, el.fönster/spegel, 8xalu., c.lås, airbag, R/CD, s/v-hjul, servo. Pris 359.000 kr,-.  </adtext>
+    </ad>
+    <ad>
+        <type>1</type>
+        <name>Suzuki</name>
+        <model>TL 1000 R</model>
+        <regyear>1998</regyear>
+        <price>110000</price>
+        <adtext>1998 Suzuki TL 1000 R, 8400 km. Pris 110.000 kr,-.  </adtext>
+        <addate>20020116</addate>
+        <volume>1000</volume>
+        <category></category>
+    </ad>
+    <ad>
+        <type>2</type>
+        <name>Volkswagen</name>
+        <model>Golf 1.8 Pink Floyd</model>
+        <regyear>1994</regyear>
+        <price>85000</price>
+        <adtext>1994 Volkswagen Golf 1.8 Pink Floyd, 4 dörrar, 135.600 km. Eu-godkänd, airbag, el.taklucka, just ratt, metallic, radio/CD/Kass, s/v-hjul, servicebok, servo, stereo. Fullständig service, 1 ägare, 6 högtalare. Pris 85.000 kr,-.  </adtext>
+        <addate>20020115</addate>
+        <volume>0</volume>
+        <category>4 dörrar</category>
+    </ad>
+    <ad>
+        <type>2</type>
+        <name>Volvo</name>
+        <model>850 2.0 LT</model>
+        <regyear>1997</regyear>
+        <price>245490</price>
+        <adtext>1997 Volvo 850 2.0 LT, Stv., 122785 km. halvskinn, el.spegel/fönster/soltak, fj.c.lås, st.spärr, airbag, just.ratt, rails, nedf.baksäte, m.armstöd, ABS, rad/kass, alarm, dragkrok, s/v-hjul, f.glass, met, garanti, servo. Pris 245.490 kr,-.  </adtext>
+    </ad>
+    <ad>
+        <type>2</type>
+        <name>Audi</name>
+        <model>A3 1.6 Ambition</model>
+        <regyear>1998</regyear>
+        <price>180000</price>
+        <adtext>1998 Audi A3 1.6 Ambition, 3 dörrar, 88.000 km. s/v-hj. el.fönster, ABS, f.glass, alu. c.lås, servo, airbag, rökfri, stilig bil. Pris 180.000 kr,-.  </adtext>
+        <addate>20020117</addate>
+        <volume>0</volume>
+        <category>3 dörrar</category>
+    </ad>
+    <ad>
+        <type>1</type>
+        <name>BMW</name>
+        <model>K 1200 RS</model>
+        <regyear>2000</regyear>
+        <price>195000</price>
+        <adtext>2000 BMW K 1200 RS, 4.000 km. sidoväskor, bagagefästen. Pris 195.000 kr,-.  </adtext>
+        <addate>20020116</addate>
+        <volume>1200</volume>
+        <category></category>
+    </ad>
+    <ad>
+        <type>2</type>
+        <name>Suzuki</name>
+        <model>Baleno 1.6 GLX</model>
+        <regyear>1999</regyear>
+        <price>175000</price>
+        <adtext>1999 Suzuki Baleno 1.6 GLX, Stv., 49.500 km. A/C, el.fönster/speil, c.lås, airbag, rails, ABS, stereo, , servo. Pris 175.000 kr,-.  </adtext>
+    </ad>
+    <ad>
+        <type>1</type>
+        <name>Suzuki</name>
+        <model>LS 650 Savage</model>
+        <regyear>1987</regyear>
+        <price>29000</price>
+        <adtext>1987 Suzuki LS 650 Savage, röd. Pris 29.000 kr,-.  </adtext>
+        <addate>20020116</addate>
+        <volume>650</volume>
+        <category></category>
+    </ad>
+    <ad>
+        <type>1</type>
+        <name>Suzuki</name>
+        <model>GS 500 E</model>
+        <regyear>1993</regyear>
+        <price>31900</price>
+        <adtext>1993 Suzuki GS 500 E. Pris 31.900,-.  </adtext>
+        <addate>20020117</addate>
+        <volume>500</volume>
+        <category></category>
+    </ad>
+    <ad>
+        <type>2</type>
+        <name>BMW</name>
+        <model>520 i</model>
+        <regyear>2000</regyear>
+        <price>387000</price>
+        <adtext>2000 BMW 520 i, Stv., 52.600 km. Skinn, klima, m.f.ratt, el.spegel/fönster, alu.fälgar, c.lås, airbag x 6, antispinn, rails, trint, ABS, rad/cd, alarm, dragkrok, met, servo, Pris 387.000 kr,-.  </adtext>
+    </ad>
+    <ad>
+        <type>1</type>
+        <name>Triumph</name>
+        <model>Daytona T 595</model>
+        <regyear>1997</regyear>
+        <price>115000</price>
+        <adtext>1997 Triumph Daytona T 595, 13.000 km. Är som ny, karbon anlägg, nya däck, extra tank. Pris 115.000 kr,-.  </adtext>
+        <addate>20020115</addate>
+        <volume>955</volume>
+        <category></category>
+    </ad>
+    <ad>
+        <type>2</type>
+        <name>Mitsubishi</name>
+        <model>Pajero 2.5 TD</model>
+        <regyear>1987</regyear>
+        <price>59000</price>
+        <adtext>1987 Mitsubishi Pajero 2.5 TD, Stv. 4x4, dragkrok, servo, mycket utr., ingen rost. Pris 59.000 kr,-.  </adtext>
+    </ad>
+</autoads>
