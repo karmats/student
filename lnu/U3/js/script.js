@@ -1,7 +1,13 @@
+const STORAGE_KEY = "mr224ceTotalScoreAndGames"; //  LocalStorage nyckel för totala poäng och antal spel
+
 var startGameBtn; // Referens till start-knappen
 var newTilesBtn; // Referens till knappen för att få nya brickor
 var newTiles; // Referens till nya brickor bilderna.
 var boardTiles; // Referens till brädets brickor.
+
+var msgElem; // Referens till meddelande-elementet
+var totScoreElem; // Referens till totala poäng-elementet
+var totGamesElem; // Referens till totala spel-elementet.
 
 var dragTile; // Referens till brickan som dras.
 
@@ -22,15 +28,42 @@ function init() {
 
   // Hämta elementet med id="board" och dess brickor.
   boardTiles = document.getElementById("board").getElementsByTagName("img");
-  for (let i = 0; i < newTiles.length; i++) {}
+
+  // Hämta elementet för meddelanden.
+  msgElem = document.getElementById("message");
+  totScoreElem = document.getElementById("totPoints");
+  totGamesElem = document.getElementById("countGames");
+
+  // Läs in totala poäng och antal spel från LocalStorage
+  updateTotalsFromStorage();
 } // End init
 
 // Starta ett nytt spel
 function startGame() {
   newTilesBtn.disabled = false;
   startGameBtn.disabled = true;
+  // Nollställ brädet
+  for (let i = 0; i < boardTiles.length; i++) {
+    boardTiles[i].classList.replace("filled", "empty");
+    boardTiles[i].src = "img/empty.png";
+  }
+  for (let i = 1; i <= 8; i++) {
+    document.getElementById("s" + i + "mark").innerHTML = "";
+  }
+  msgElem.innerHTML = "";
 } // End startGame
 
+// Uppdatera totala poäng och antal spel från localStorage
+function updateTotalsFromStorage() {
+  const totals = localStorage.getItem(STORAGE_KEY);
+  if (totals) {
+    const [totScore, totGames] = totals.split(";");
+    totScoreElem.innerHTML = +totScore || 0;
+    totGamesElem.innerHTML = +totGames || 0;
+  }
+} // End updateTotalsFromStorage
+
+// Lägg ut nya brickor till spelet.
 function newTiles() {
   // Slumpa fram nya brickor
   for (let i = 0; i < newTiles.length; i++) {
@@ -41,6 +74,7 @@ function newTiles() {
     }
     playedNumbers.push(newTileNumber);
     newTiles[i].src = `img/${newTileNumber}.png`;
+    newTiles[i].id = newTileNumber;
 
     newTiles[i].addEventListener("dragstart", dragstartTile);
     newTiles[i].addEventListener("dragend", dragendTile);
@@ -77,16 +111,25 @@ function tileOverBoardImg(event) {
   // Brickan släpps på en ledig ruta.
   if (event.type === "drop" && tile.classList.contains("empty")) {
     tile.src = dragTile.src;
+    tile.id = dragTile.id;
     tile.style.backgroundColor = "";
     tile.classList.replace("empty", "filled");
 
     // Nollställ brickan som dras.
     dragTile.src = "img/empty.png";
     dragTile.className = "empty";
+    dragTile.removeAttribute("id");
+    // Ta bort drag och drop-händelsehanterare
     dragTile.draggable = false;
+    dragTile.removeEventListener("dragstart", dragstartTile);
+    dragTile.removeEventListener("dragend", dragendTile);
     // Kolla om alla nya brickor är utspelade
     if (checkNewTilesPlayed()) {
-      newTilesBtn.disabled = false;
+      if (checkEndGame()) {
+        endGame();
+      } else {
+        newTilesBtn.disabled = false;
+      }
     }
   } else if (tile.classList.contains("empty")) {
     // Brickan dras över en ledig ruta.
@@ -108,6 +151,53 @@ function checkNewTilesPlayed() {
   }
   return true;
 } // End checkNewTilesPlayed
+
+// Kolla om alla brickor är utspelade i brädet.
+function checkEndGame() {
+  for (let i = 0; i < boardTiles.length; i++) {
+    if (boardTiles[i].classList.contains("empty")) {
+      return false;
+    }
+  }
+  return true;
+} // End checkEndGame
+
+// Avsluta spelet. Räkna ut poäng och visa resultat.
+function endGame() {
+  let score = 0;
+  const board = document.getElementById("board");
+  for (let i = 1; i <= 8; i++) {
+    const collection = board.getElementsByClassName("s" + i);
+    const mark = document.getElementById("s" + i + "mark");
+    let lastId = 0;
+    for (let j = 0; j < collection.length; j++) {
+      const id = +collection[j].id;
+      // Brickorna är inte i ordning
+      if (id < lastId) {
+        mark.innerHTML = "&cross;";
+        mark.style.color = "red";
+        break;
+      }
+      lastId = id;
+      // Brickorna är i ordning!
+      if (j === collection.length - 1) {
+        score++;
+        mark.innerHTML = "&check;";
+        mark.style.color = "green";
+      }
+    }
+  }
+  // Visa resultat, aktivera knappen för nytt spel.
+  msgElem.innerHTML = "Du fick " + score + " poäng";
+  newGameBtn.disabled = false;
+
+  // Spara resultatet i localStorage och uppdatera ränkarna.
+  let [totScore, totGames] = (localStorage[STORAGE_KEY] || "").split(";");
+  totScore = (+totScore || 0) + score;
+  totGames = (+totGames || 0) + 1;
+  localStorage[STORAGE_KEY] = totScore + ";" + totGames;
+  updateTotalsFromStorage();
+} // End endGame
 
 // Slumpa fram ett nytt nummer mellan 1 och 40
 function randomTile() {
