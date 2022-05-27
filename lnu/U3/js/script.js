@@ -1,4 +1,5 @@
 const STORAGE_KEY = "mr224ceTotalScoreAndGames"; //  LocalStorage nyckel för totala poäng och antal spel
+const GHOST_TIMEOUT = [30 * 1000, 60 * 1000]; // Min/max timeout för spöket att komma.
 
 var startGameBtn; // Referens till start-knappen
 var newTilesBtn; // Referens till knappen för att få nya brickor
@@ -8,10 +9,13 @@ var boardTiles; // Referens till brädets brickor.
 var msgElem; // Referens till meddelande-elementet
 var totScoreElem; // Referens till totala poäng-elementet
 var totGamesElem; // Referens till totala spel-elementet.
+var ghostElem; // Reference till spök-elementet.
 
 var dragTile; // Referens till brickan som dras.
 
-var playedNumbers = []; // Array med nummer som spelaren har spelat
+var playedNumbers; // Array med nummer som spelaren har spelat
+
+var ghostTimeoutRef = null; // Referens till timern för hur ofta spöket ska komma.
 
 function init() {
   // Hämta elementet med id="startGameBtn" och koppla en funktion till knappen.
@@ -29,10 +33,13 @@ function init() {
   // Hämta elementet med id="board" och dess brickor.
   boardTiles = document.getElementById("board").getElementsByTagName("img");
 
-  // Hämta elementet för meddelanden.
+  // Hämta elementet för meddelanden och totalpoäng.
   msgElem = document.getElementById("message");
   totScoreElem = document.getElementById("totPoints");
   totGamesElem = document.getElementById("countGames");
+
+  // Hämta elementet för spöket
+  ghostElem = document.getElementById("ghost");
 
   // Läs in totala poäng och antal spel från LocalStorage
   updateTotalsFromStorage();
@@ -51,6 +58,15 @@ function startGame() {
     document.getElementById("s" + i + "mark").innerHTML = "";
   }
   msgElem.innerHTML = "";
+
+  // Nollställ spelade nummer
+  playedNumbers = [];
+
+  // Starta timer för spöket
+  ghostTimeoutRef = setTimeout(
+    showGhost,
+    randomNumber(GHOST_TIMEOUT[0], GHOST_TIMEOUT[1])
+  );
 } // End startGame
 
 // Uppdatera totala poäng och antal spel från localStorage
@@ -124,12 +140,12 @@ function tileOverBoardImg(event) {
     dragTile.removeEventListener("dragstart", dragstartTile);
     dragTile.removeEventListener("dragend", dragendTile);
     // Kolla om alla nya brickor är utspelade
-    if (checkNewTilesPlayed()) {
-      if (checkEndGame()) {
-        endGame();
-      } else {
-        newTilesBtn.disabled = false;
-      }
+    if (isAllNewTilesPlayed()) {
+      newTilesBtn.disabled = false;
+    }
+    // Kolla om spelet är slut
+    if (isBoardFilled()) {
+      endGame();
     }
   } else if (tile.classList.contains("empty")) {
     // Brickan dras över en ledig ruta.
@@ -143,24 +159,74 @@ function tileLeaveBoardImg(event) {
 } // End tileLeaveBoardImg
 
 // Kolla om alla nya brickor är utspelade.
-function checkNewTilesPlayed() {
+function isAllNewTilesPlayed() {
   for (let i = 0; i < newTiles.length; i++) {
     if (newTiles[i].classList.contains("filled")) {
       return false;
     }
   }
   return true;
-} // End checkNewTilesPlayed
+} // End isAllNewTilesPlayed
 
 // Kolla om alla brickor är utspelade i brädet.
-function checkEndGame() {
+function isBoardFilled() {
   for (let i = 0; i < boardTiles.length; i++) {
     if (boardTiles[i].classList.contains("empty")) {
       return false;
     }
   }
   return true;
-} // End checkEndGame
+} // End isBoardFilled
+
+// Visa spöket och ta bort 4 slumpade brickor från brädet.
+function showGhost() {
+  ghostElem.style.visibility = "visible";
+  // Alla brickor som har ett värde
+  const filledTiles = [];
+  for (let i = 0; i < boardTiles.length; i++) {
+    if (boardTiles[i].classList.contains("filled")) {
+      filledTiles.push(boardTiles[i]);
+    }
+  }
+  let removedTiles = 0;
+  while (filledTiles.length) {
+    const tile = filledTiles.splice(
+      randomNumber(0, filledTiles.length - 1),
+      1
+    )[0];
+    tile.classList.add("ghostTile");
+    removedTiles++;
+    // Alla brickor som ska tas bort har tagits bort
+    if (removedTiles === 4) {
+      break;
+    }
+  }
+  // Ta bort spök-brickorna efter två sekunder
+  setTimeout(removeGhostTiles, 2000);
+} // End showGhost
+
+// Ta bort spöket och brickorna från spelet.
+function removeGhostTiles() {
+  for (let i = 0; i < boardTiles.length; i++) {
+    if (boardTiles[i].classList.contains("ghostTile")) {
+      const tile = boardTiles[i];
+      const id = tile.id;
+      // Nollställ brickan.
+      tile.src = "img/empty.png";
+      tile.classList.replace("filled", "empty");
+      tile.classList.remove("ghostTile");
+      tile.removeAttribute("id");
+      playedNumbers = playedNumbers.filter((nr) => nr !== +id);
+    }
+  }
+  // Ta bort spöket.
+  ghostElem.style.visibility = "hidden";
+  // Starta timern för nytt spöke igen
+  ghostTimeoutRef = setTimeout(
+    showGhost,
+    randomNumber(GHOST_TIMEOUT[0], GHOST_TIMEOUT[1])
+  );
+} // End removeGhostTiles
 
 // Avsluta spelet. Räkna ut poäng och visa resultat.
 function endGame() {
@@ -187,9 +253,15 @@ function endGame() {
       }
     }
   }
-  // Visa resultat, aktivera knappen för nytt spel.
+  // Visa resultat, aktivera knappen för nytt spel och deaktivera knappen för nya brickor.
   msgElem.innerHTML = "Du fick " + score + " poäng";
   newGameBtn.disabled = false;
+  newTilesBtn.disabled = true;
+
+  // Stäng av spöket
+  if (ghostTimeoutRef !== null) {
+    clearInterval(ghostTimeoutRef);
+  }
 
   // Spara resultatet i localStorage och uppdatera ränkarna.
   let [totScore, totGames] = (localStorage[STORAGE_KEY] || "").split(";");
@@ -201,7 +273,12 @@ function endGame() {
 
 // Slumpa fram ett nytt nummer mellan 1 och 40
 function randomTile() {
-  return Math.floor(Math.random() * 40 + 1);
+  return randomNumber(1, 40);
 } // End randomTile
+
+// Slumpa fram ett nytt nummer mellan min och max
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+} // End randomNumber
 
 window.onload = init;
