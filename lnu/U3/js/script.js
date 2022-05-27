@@ -89,7 +89,7 @@ function newTiles() {
       newTileNumber = randomTile();
     }
     playedNumbers.push(newTileNumber);
-    newTiles[i].src = `img/${newTileNumber}.png`;
+    newTiles[i].src = "img/" + newTileNumber + ".png";
     newTiles[i].id = newTileNumber;
 
     newTiles[i].addEventListener("dragstart", dragstartTile);
@@ -102,13 +102,16 @@ function newTiles() {
 
 // En bricka börjar dras. Händelsehanterare för drop zones
 function dragstartTile(event) {
-  for (let i = 0; i < boardTiles.length; i++) {
-    boardTiles[i].addEventListener("dragover", tileOverBoardImg);
-    boardTiles[i].addEventListener("drop", tileOverBoardImg);
-    boardTiles[i].addEventListener("dragleave", tileLeaveBoardImg);
+  // Koilla att dragstart-eventet kommer från en bricka
+  if (event.target.classList.contains("filled")) {
+    for (let i = 0; i < boardTiles.length; i++) {
+      boardTiles[i].addEventListener("dragover", tileOverBoardImg);
+      boardTiles[i].addEventListener("drop", tileOverBoardImg);
+      boardTiles[i].addEventListener("dragleave", tileLeaveBoardImg);
+    }
+    // Spara elementet som dras
+    dragTile = event.target;
   }
-  // Spara elementet som dras
-  dragTile = event.target;
 } // End dragstartTile
 
 // Drag-händelsen avslutas. Ta bort händelsehanterare på drop zones
@@ -135,10 +138,7 @@ function tileOverBoardImg(event) {
     dragTile.src = "img/empty.png";
     dragTile.className = "empty";
     dragTile.removeAttribute("id");
-    // Ta bort drag och drop-händelsehanterare
-    dragTile.draggable = false;
-    dragTile.removeEventListener("dragstart", dragstartTile);
-    dragTile.removeEventListener("dragend", dragendTile);
+
     // Kolla om alla nya brickor är utspelade
     if (isAllNewTilesPlayed()) {
       newTilesBtn.disabled = false;
@@ -261,6 +261,13 @@ function endGame() {
   // Stäng av spöket
   if (ghostTimeoutRef !== null) {
     clearInterval(ghostTimeoutRef);
+  }
+
+  // Stäng av drag- och drop-händelser för nya brickor
+  for (let i = 0; i < newTiles.length; i++) {
+    newTiles[i].draggable = false;
+    newTiles[i].removeEventListener("dragstart", dragstartTile);
+    newTiles[i].removeEventListener("dragend", dragendTile);
   }
 
   // Spara resultatet i localStorage och uppdatera ränkarna.
