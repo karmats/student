@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<starwarsmovies>
+    <movie id="1" episode="4">
+        <name>A new hope</name>
+        <director>George Lucas</director>
+        <releasedate>1977-05-25</releasedate>
+    </movie>
+    <movie id="2" episode="5">
+        <name>The empire strikes back</name>
+        <director>Irvin Kershne</director>
+        <releasedate>1980-05-17</releasedate>
+    </movie>
+    <movie id="6" episode="3">
+        <name>Revenge of the Sith</name>
+        <director>George Lucas</director>
+        <releasedate>2005-05-19</releasedate>
+    </movie>
+</starwarsmovies>
