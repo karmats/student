@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation>Information om cd-skivor</xsd:documentation>
+    </xsd:annotation>
+    <xsd:element name="CATALOG" type="catalogType" />
+    <xsd:complexType name="catalogType">
+        <xsd:sequence>
+            <xsd:element name="CD" type="cdType" maxOccurs="1000" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="cdType">
+        <xsd:sequence>
+            <xsd:element name="TITLE" type="xsd:string" />
+            <xsd:element name="ARTIST" type="artistType" />
+            <xsd:element name="PRODUCENT" type="producentType" />
+            <xsd:element name="LAND" type="xsd:string" />
+            <xsd:element name="BOLAG" type="xsd:string" />
+            <xsd:element name="PRIS" type="prisType" />
+            <xsd:element name="YEAR" type="xsd:gYear" />
+        </xsd:sequence>
+        <xsd:attribute name="id" type="idType" use="required" />
+    </xsd:complexType>
+    <xsd:simpleType name="idType">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[0-9]{3}[a-zA-Z]{2}" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="artistType">
+        <xsd:sequence>
+            <xsd:element name="NAMN" type="xsd:string" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="producentType">
+        <xsd:sequence>
+            <xsd:element name="NAMN" type="xsd:string" />
+            <xsd:element name="ADRESS" type="adressType" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="adressType">
+        <xsd:sequence>
+            <xsd:element name="GATA" type="xsd:string" />
+            <xsd:element name="POSTNUMMER" type="xsd:integer" />
+            <xsd:element name="TELEFON" type="xsd:string" minOccurs="0" maxOccurs="5" />
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="prisType">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:integer">
+                <xsd:attribute name="valuta" type="valutaType" />
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:simpleType name="valutaType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="sek" />
+            <xsd:enumeration value="kr" />
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

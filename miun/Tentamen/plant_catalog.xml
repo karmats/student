@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="uppgift9.xsl"?>
+<CATALOG>
+    <PLANT>
+        <COMMON>Bloodroot</COMMON>
+        <BOTANICAL>Sanguinaria canadensis</BOTANICAL>
+        <ZONE>4</ZONE>
+        <LIGHT>Mostly Shady</LIGHT>
+        <PRICE>25</PRICE>
+        <AVAILABILITY>031599</AVAILABILITY>
+    </PLANT>
+    <PLANT>
+        <COMMON>Columbine</COMMON>
+        <BOTANICAL>Aquilegia canadensis</BOTANICAL>
+        <ZONE>3</ZONE>
+        <LIGHT>Mostly Shady</LIGHT>
+        <PRICE>31</PRICE>
+        <AVAILABILITY>030699</AVAILABILITY>
+    </PLANT>
+    <PLANT>
+        <COMMON>Marsh Marigold</COMMON>
+        <BOTANICAL>Caltha palustris</BOTANICAL>
+        <ZONE>4</ZONE>
+        <LIGHT>Mostly Sunny</LIGHT>
+        <PRICE>79</PRICE>
+        <AVAILABILITY>051799</AVAILABILITY>
+    </PLANT>
+    <PLANT>
+        <COMMON>Cowslip</COMMON>
+        <BOTANICAL>Caltha palustris</BOTANICAL>
+        <ZONE>4</ZONE>
+        <LIGHT>Mostly Shady</LIGHT>
+        <PRICE>99</PRICE>
+        <AVAILABILITY>030699</AVAILABILITY>
+    </PLANT>
+    <PLANT>
+        <COMMON>Dutchman's-Breeches</COMMON>
+        <BOTANICAL>Diecentra cucullaria</BOTANICAL>
+        <ZONE>3</ZONE>
+        <LIGHT>Mostly Shady</LIGHT>
+        <PRICE>47</PRICE>
+        <AVAILABILITY>012099</AVAILABILITY>
+    </PLANT>
+    <PLANT>
+        <COMMON>Ginger, Wild</COMMON>
+        <BOTANICAL>Asarum canadense</BOTANICAL>
+        <ZONE>3</ZONE>
+        <LIGHT>Mostly Shady</LIGHT>
+        <PRICE>34</PRICE>
+        <AVAILABILITY>041899</AVAILABILITY>
+    </PLANT>
+    <PLANT>
+        <COMMON>Hepatica</COMMON>
+        <BOTANICAL>Hepatica americana</BOTANICAL>
+        <ZONE>4</ZONE>
+        <LIGHT>Mostly Shady</LIGHT>
+        <PRICE>98</PRICE>
+        <AVAILABILITY>012699</AVAILABILITY>
+    </PLANT>
+    <PLANT>
+        <COMMON>Liverleaf</COMMON>
+        <BOTANICAL>Hepatica americana</BOTANICAL>
+        <ZONE>4</ZONE>
+        <LIGHT>Mostly Shady</LIGHT>
+        <PRICE>199</PRICE>
+        <AVAILABILITY>010299</AVAILABILITY>
+    </PLANT>
+    <PLANT>
+        <COMMON>Jack-In-The-Pulpit</COMMON>
+        <BOTANICAL>Arisaema triphyllum</BOTANICAL>
+        <ZONE>4</ZONE>
+        <LIGHT>Mostly Shady</LIGHT>
+        <PRICE>62</PRICE>
+        <AVAILABILITY>020199</AVAILABILITY>
+    </PLANT>
+    <PLANT>
+        <COMMON>Mayapple</COMMON>
+        <BOTANICAL>Podophyllum peltatum</BOTANICAL>
+        <ZONE>3</ZONE>
+        <LIGHT>Mostly Shady</LIGHT>
+        <PRICE>89</PRICE>
+        <AVAILABILITY>060599</AVAILABILITY>
+    </PLANT>
+    <PLANT>
+        <COMMON>Phlox, Woodland</COMMON>
+        <BOTANICAL>Phlox divaricata</BOTANICAL>
+        <ZONE>3</ZONE>
+        <LIGHT>Sun or Shade</LIGHT>
+        <PRICE>89</PRICE>
+        <AVAILABILITY>012299</AVAILABILITY>
+    </PLANT>
+    <PLANT>
+        <COMMON>Phlox, Blue</COMMON>
+        <BOTANICAL>Phlox divaricata</BOTANICAL>
+        <ZONE>3</ZONE>
+        <LIGHT>Sun or Shade</LIGHT>
+        <PRICE>98</PRICE>
+        <AVAILABILITY>021699</AVAILABILITY>
+    </PLANT>
+</CATALOG>

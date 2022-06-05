@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:annotation>
+        <xsd:documentation>Information om cd-skivor</xsd:documentation>
+    </xsd:annotation>
+    <xsd:element name="CATALOG">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="CD" maxOccurs="1000">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="TITLE" type="xsd:string" />
+                            <xsd:element name="ARTIST">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="NAMN" type="xsd:string" />
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="PRODUCENT">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="NAMN" type="xsd:string" />
+                                        <xsd:element name="ADRESS">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="GATA" type="xsd:string" />
+                                                    <xsd:element name="POSTNUMMER" type="xsd:integer" />
+                                                    <xsd:element name="TELEFON" type="xsd:string" minOccurs="0" maxOccurs="5" />
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="LAND" type="xsd:string" />
+                            <xsd:element name="BOLAG" type="xsd:string" />
+                            <xsd:element name="PRIS">
+                                <xsd:complexType>
+                                    <xsd:simpleContent>
+                                        <xsd:extension base="xsd:integer">
+                                            <xsd:attribute name="valuta">
+                                                <xsd:simpleType>
+                                                    <xsd:restriction base="xsd:string">
+                                                        <xsd:enumeration value="sek" />
+                                                        <xsd:enumeration value="kr" />
+                                                    </xsd:restriction>
+                                                </xsd:simpleType>
+                                            </xsd:attribute>
+                                        </xsd:extension>
+                                    </xsd:simpleContent>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="YEAR" type="xsd:gYear" />
+                        </xsd:sequence>
+                        <xsd:attribute name="id" use="required">
+                            <xsd:simpleType>
+                                <xsd:restriction base="xsd:string">
+                                    <xsd:pattern value="[0-9]{3}[a-zA-Z]{2}" />
+                                </xsd:restriction>
+                            </xsd:simpleType>
+                        </xsd:attribute>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

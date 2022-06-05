@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE lpsamling [
+<!ELEMENT lpsamling (lp+)>
+<!ELEMENT lp (artist, titel, genre, utgivningsår?)>
+<!ATTLIST lp hyllfack CDATA #REQUIRED>
+<!ELEMENT artist (#PCDATA)>
+<!ELEMENT titel (#PCDATA)>
+<!ELEMENT genre (#PCDATA)>
+<!ELEMENT utgivningsår (#PCDATA)>
+]>
+<lpsamling>
+    <lp hyllfack="1">
+        <artist>Håkan Hellström</artist>
+        <titel>Känn ingen sorg för mig Göteborg</titel>
+        <genre>Rock</genre>
+        <utgivningsår>2000</utgivningsår>
+    </lp>
+    <lp hyllfack="3">
+        <artist>Markus Krunegård</artist>
+        <titel>Markusevengeliet</titel>
+        <genre>Rock</genre>
+        <utgivningsår>2008</utgivningsår>
+    </lp>
+    <lp hyllfack="1">
+        <artist>The Smiths</artist>
+        <titel>The queen is dead</titel>
+        <genre>Pop</genre>
+    </lp>
+</lpsamling>

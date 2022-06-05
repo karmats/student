@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE katalog [
+<!ELEMENT katalog (bok+)>
+<!ELEMENT bok (författare+, titel, genre, publiceringsdatum, beskrivning?)>
+<!ATTLIST bok id CDATA #REQUIRED>
+<!ELEMENT författare (förnamn, efternamn)>
+<!ELEMENT förnamn (#PCDATA)>
+<!ELEMENT efternamn (#PCDATA)>
+<!ELEMENT titel (#PCDATA)>
+<!ELEMENT genre (#PCDATA)>
+<!ELEMENT publiceringsdatum (#PCDATA)>
+<!ELEMENT beskrivning (#PCDATA)>
+]>
